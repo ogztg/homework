@@ -1,33 +1,37 @@
-package campSecondDay;
+package campThirdDay;
 
 public class Main {
 
 	public static void main(String[] args) {
-		Course course1 = new Course(1,"C# + Angular", "Yazılım Geliştirici Kampı");
-		Course course2 = new Course(2, "Java + React", "Yazılım Geliştirici Kampı");
-		Course course3 = new Course(3, "Programlamaya Giriş İçin Temel Kurs", "Yazılım Geliştirici Kampı");
 		
-		Course[] courses = {course1, course2, course3};
-		for(Course course : courses) {
-			System.out.println(course.name + "/" + course.detail);
-		}
-		courseManager courseManager = new courseManager();
-		courseManager.addCourse(course1);
-		courseManager.addCourse(course2);
-		courseManager.addCourse(course3);
+		Student student = new Student();
+		student.setId(2);
+		student.setLectureName("Java + React");
+		student.setFirstName("Oguz");
+		student.setLastName("Tuğ");
+		student.setEmail("oguztug@gmail.com");
+		student.setCourseName("Yazilim Gelistirici Kampi");
+		student.setPassword("1252");
 		
-		courseManager.deleteCourse(course3);
+		Instructor instructor = new Instructor();
+		instructor.setId(3);
+		instructor.setFirstName("Engin");
+		instructor.setLastName("Demirog");
+		instructor.setCourseName("Java + React");
 		
-		User user1 = new User(1, "oguz", " tug", "ogztg", "oguztug@gmail.com");
-		User user2 = new User(2, "ali", " veli", "lvl", "aliveli@gmail.com");
+		User user = new User();
+		user.setId(1);
+		user.setEmail("user@gmail.com");
+		user.setPassword("213131");
 		
-		User[] users = {user1, user2};
-		for(User user : users) {
-			System.out.println(user.firstName + user.lastName);
-		}
+		StudentManager studentManager = new StudentManager();
+		studentManager.studentSelectCourse(student);
+		
+		InstructorManager instructorManager = new InstructorManager();
+		instructorManager.instructorInfo(instructor);
+		
 		UserManager userManager = new UserManager();
-		userManager.addUser(user2);
-		userManager.updateUser(user1);
+		userManager.userAdd(user);
 	}
 
 }

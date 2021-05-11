@@ -1,10 +1,10 @@
-package campSecondDay;
+package campThirdDay;
 
 public class UserManager {
-	public void addUser(User user) {
-		System.out.println("Kullanýcý adýnýz : " + user.userName);
+	public void userAdd(User user) {
+		System.out.println("Yeni Kullanici: " + "user id: "+ user.getId() + "/" + "Email: "+ user.getEmail() + "/" + "Kullanici Sifresi: " + user.getPassword());
+		
 	}
-	public void updateUser(User user) {
-		System.out.println("Email baþarýyla güncellendi: "+ user.email);
+	
 	}
-}
+
